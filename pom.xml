@@ -11,7 +11,7 @@
 	<groupId>com.prokarma.demo</groupId>
 	<artifactId>course-neo4j</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 
 	<name>course-neo4j</name>
 	<url>http://maven.apache.org</url>

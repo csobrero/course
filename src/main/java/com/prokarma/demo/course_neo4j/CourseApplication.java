@@ -1,6 +1,5 @@
 package com.prokarma.demo.course_neo4j;
 
-import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -18,20 +17,16 @@ import org.neo4j.driver.v1.Session;
 import org.neo4j.driver.v1.StatementResult;
 import org.neo4j.driver.v1.Values;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-@EnableAutoConfiguration
-@ComponentScan
+//@EnableAutoConfiguration
+//@ComponentScan
 @RestController("/")
-public class CourseApplication extends WebMvcConfigurerAdapter {
+public class CourseApplication {
     
     @Autowired
     Driver driver;
@@ -127,25 +122,25 @@ public class CourseApplication extends WebMvcConfigurerAdapter {
         return result;
     }
 
-    public static void main(String[] args) throws Exception {
-        System.setErr(new PrintStream(System.out) {
-            @Override
-            public void write(int b) {
-                super.write(b);
-            }
-
-            @Override
-            public void write(byte[] buf, int off, int len) {
-                super.write(buf, off, len);
-            }
-        });
-        new SpringApplicationBuilder(CourseApplication.class).run(args);
-    }
+//    public static void main(String[] args) throws Exception {
+//        System.setErr(new PrintStream(System.out) {
+//            @Override
+//            public void write(int b) {
+//                super.write(b);
+//            }
+//
+//            @Override
+//            public void write(byte[] buf, int off, int len) {
+//                super.write(buf, off, len);
+//            }
+//        });
+//        new SpringApplicationBuilder(CourseApplication.class).run(args);
+//    }
 
     @Bean
     public Driver graphDBDriver() {
         Driver driver = GraphDatabase.driver("bolt://sb10.stations.graphenedb.com:24786",
-                AuthTokens.basic("demo_prokarma", "v3zbUQ9QQELYEXm8t2XM"));
+                AuthTokens.basic("test_prokarma", "Gi6516ORGRAloCrCf5tq"));
         return driver;
     }
 
