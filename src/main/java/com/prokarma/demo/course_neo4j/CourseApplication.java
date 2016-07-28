@@ -40,7 +40,7 @@ public class CourseApplication {
 
         Session session = driver.session();
         StatementResult result = session.run(GET_MOVIE_QUERY, Values.parameters("1", title));
-        Map<String, Object> map = result.hasNext() ? result.next().asMap() : Collections.emptyMap();
+        Map<String, Object> map = result.hasNext() ? result.next().asMap() : new HashMap<String, Object>();
         session.close();
 
         return map;

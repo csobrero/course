@@ -3,5 +3,5 @@ applications:
 - name: course-neo4j
   memory: 512M
   instances: 1
-  host: course-neo4j-yage
+  host: course-neo4j-iana
   path: target/course-neo4j-0.0.1-SNAPSHOT.war
